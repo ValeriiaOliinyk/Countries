@@ -1,0 +1,16 @@
+{{#each this}}
+<div class="container-fluid templates">
+<h2 class="title">{{name}}</h2>
+<div class="box">
+<div class="box__info">
+<p class="box__text"><span class="box__text--bold">Capital:</span> {{capital}}</p>
+<p class="box__text"><span class="box__text--bold">Population:</span> {{population}}</p>
+<ul class="box__text--bold box__list">Languages:{{#each languages}}
+<li class="box__item">{{name}}</li>
+{{/each}}
+</ul>
+</div>
+<img src="{{flag}}" alt="{{cioc}}" class="box__image">
+</div>
+</div>
+{{/each}}
