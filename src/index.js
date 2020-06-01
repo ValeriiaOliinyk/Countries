@@ -1,4 +1,4 @@
-const debounce = require('lodash.debounce');
+import debounce from 'lodash.debounce';
 import './styles.css';
 import './js/notifications';
 import templates from './templates/countries.hbs';
@@ -14,6 +14,10 @@ refs.input.addEventListener(
     const inputValue = event.target.value;
     refs.container.innerHTML = '';
     fetchCountries(inputValue).then(data => {
+      if (!refs.input.value) {
+        return;
+      }
+
       if (data.length > 10) {
         showMessage();
       }
