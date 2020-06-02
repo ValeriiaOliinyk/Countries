@@ -13,11 +13,10 @@ refs.input.addEventListener(
   debounce(event => {
     const inputValue = event.target.value;
     refs.container.innerHTML = '';
+    if (!refs.input.value) {
+      return;
+    }
     fetchCountries(inputValue).then(data => {
-      if (!refs.input.value) {
-        return;
-      }
-
       if (data.length > 10) {
         showMessage();
       }
